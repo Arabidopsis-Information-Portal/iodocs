@@ -39,14 +39,27 @@
         "name": "ThaleMine",
         "protocol": "https",
         "baseURL": "api.araport.org",
-        "publicPath": "/intermine/v0.4",
+        "publicPath": "/mine/0.5.0/service",
         "version": "/version",
         "auth": "key",
         "intermine": true,
         "keyParam": "token",
         "booleanTrueVal": "true",
         "booleanFalseVal": "false",
-        "excludeRequiresAuthn": true
+        "headers": { "Authorization" : "Bearer 363af7131b6a3e5c2e5931b3bf624c" }
+    },
+    "sandbox-thalemine": {
+        "name": "ThaleMine-Sandbox",
+        "protocol": "https",
+        "baseURL": "api.araport.org",
+        "publicPath": "/sandbox-intermine/v0.1",
+        "version": "/version",
+        "auth": "key",
+        "intermine": true,
+        "keyParam": "token",
+        "booleanTrueVal": "true",
+        "booleanFalseVal": "false",
+        "headers": { "Authorization" : "Bearer 363af7131b6a3e5c2e5931b3bf624c" }
     },
     "flymine": {
         "name": "FlyMine",

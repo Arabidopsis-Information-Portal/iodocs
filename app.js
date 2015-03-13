@@ -152,12 +152,21 @@ function initAppConfig () {
         , api = apisConfig[name]
         , serviceListingURI = api.protocol + "://" + api.baseURL + api.publicPath;
 
+      var options = {
+        hostname: api.baseURL,
+        path: api.publicPath,
+        method: 'GET'
+      };
+
+      if (api.headers != null)
+        options['headers'] = api.headers;
+
       if (!api.intermine) return;
 
       logger.debug("Fetching service listing from " + serviceListingURI);
 
-      var doget = (api.protocol === 'https') ? https.get : http.get;
-      req = doget(serviceListingURI, function responseHandler (res) {
+      var doreq = (api.protocol === 'https') ? https.request : http.request;
+      req = doreq(options, function responseHandler (res) {
           var body = "";
           res.on('data', function(chunk) { body += chunk; });
           res.on('error', handleError);
@@ -179,6 +188,7 @@ function initAppConfig () {
         logger.log('warn', 'Could not fetch service listing for %s', name, e);
         delete apisConfig[name];
       }
+      req.end();
     }
 
     /* set 'excludeRequiresAuthn': 'true' in apiconfig.json
