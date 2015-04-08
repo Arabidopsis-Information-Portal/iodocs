@@ -45,8 +45,7 @@
         "intermine": true,
         "keyParam": "token",
         "booleanTrueVal": "true",
-        "booleanFalseVal": "false",
-        "headers": { "Authorization" : "Bearer 363af7131b6a3e5c2e5931b3bf624c" }
+        "booleanFalseVal": "false"
     },
     "sandbox-thalemine": {
         "name": "ThaleMine-Sandbox",
@@ -58,8 +57,7 @@
         "intermine": true,
         "keyParam": "token",
         "booleanTrueVal": "true",
-        "booleanFalseVal": "false",
-        "headers": { "Authorization" : "Bearer 363af7131b6a3e5c2e5931b3bf624c" }
+        "booleanFalseVal": "false"
     },
     "flymine": {
         "name": "FlyMine",
