@@ -29,7 +29,15 @@ block scripts
   script(src='/javascripts/base64.js')
   script(src='/javascripts/services.js')
   script(src='/javascripts/controllers.js')
+  script(src='/javascripts/listeners.js')
   script(src='/javascripts/directives.js')
   script(src='/javascripts/app.js')
+
+  script.
+    if (window.addEventListener) {
+      addEventListener("message", listener, false)
+    } else {
+      attachEvent("onmessage", listener)
+    }
 
 // end views/ng-api

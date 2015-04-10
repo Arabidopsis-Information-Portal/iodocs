@@ -22,10 +22,11 @@
             .form-group
               .input-group
                 span.input-group-addon
-                  span(ng-show="auth.loggedIn")  Logged in {{auth.username ? 'as ' + auth.username : 'anonymously'}}
+                  span(ng-show="auth.loggedIn") Logged in {{auth.username ? 'as ' + auth.username : 'anonymously'}}
                   span(ng-hide="auth.loggedIn") Not logged in
                 input.form-control.token(ng-if="auth.currentScheme.type == 'token'",
                   ng-hide="auth.loggedIn",
+                  id="api-token",
                   type="text",
                   ng-model="auth.credentials.token",
                   placeholder="API token")
@@ -45,6 +46,6 @@
                   button.btn.btn-default.dropdown-toggle(type="button", data-toggle="dropdown")
                     span.caret
                   ul.dropdown-menu.pull-right
-                    li(ng-repeat="scheme in auth.schemes", ng-class="{active: scheme === auth.currentScheme}")
+                    li(ng-repeat="scheme in auth.schemes", ng-class="{active: scheme.mechanism === 'header'}")
                       a(ng-click="auth.currentScheme = scheme") {{scheme.name}}
 
