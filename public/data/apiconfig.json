@@ -42,6 +42,7 @@
         "publicPath": "/mine/0.5.0/service",
         "version": "/version",
         "auth": "key",
+        "hideAuth": true,
         "intermine": true,
         "keyParam": "token",
         "booleanTrueVal": "true",
@@ -54,10 +55,12 @@
         "publicPath": "/sandbox-intermine/v0.1",
         "version": "/version",
         "auth": "key",
+        "hideAuth": true,
         "intermine": true,
         "keyParam": "token",
         "booleanTrueVal": "true",
-        "booleanFalseVal": "false"
+        "booleanFalseVal": "false",
+        "headers": { "Authorization" : "Bearer 363af7131b6a3e5c2e5931b3bf624c" }
     },
     "flymine": {
         "name": "FlyMine",
