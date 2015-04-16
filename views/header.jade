@@ -3,7 +3,7 @@
     .navbar-header
       .row
         .col-sm-4
-          span.navbar-brand
+          span.navbar-brand(class="#{!apiInfo().hideAuth ? '' : 'hide'}")
             a(href= '/')
               i.glyphicon.glyphicon-home
           span.navbar-brand
