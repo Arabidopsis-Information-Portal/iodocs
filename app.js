@@ -39,6 +39,7 @@ var express     = require('express'),
     crypto      = require('crypto'),
     stylus      = require('stylus'),
     nib         = require('nib'),
+    program     = require('commander'),
     EventEmitter = require('events').EventEmitter,
     oauth       = require('./lib/oauth'),
     config      = {},
@@ -50,6 +51,14 @@ try {
 } catch (e) {
   // ignore.
 }
+
+// Load command line arguments
+program
+  .usage('[options]')
+  .option('-l, --logfile <logfile>', 'Specify path to logfile')
+  .parse(process.argv);
+
+var logfile = program.logfile ? program.logfile : "iodocs.log";
 
 // Load basic app Configuration
 try {
@@ -74,7 +83,7 @@ var logger = new winston.Logger({
       level: 'info'
     }),
     new winston.transports.File({
-      filename: "iodocs.log",
+      filename: logfile,
       timestamp: true,
       level: 'debug'
     })
