@@ -39,7 +39,7 @@
         "name": "ThaleMine",
         "protocol": "https",
         "baseURL": "api.araport.org",
-        "publicPath": "/mine/0.5.0/service",
+        "publicPath": "/thalemine/0.1.0/service",
         "version": "/version",
         "auth": "key",
         "hideAuth": true,
